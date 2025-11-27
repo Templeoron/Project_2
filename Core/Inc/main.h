@@ -59,6 +59,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED_Pin GPIO_PIN_2
 #define LED_GPIO_Port GPIOB
+#define ST7735_BL_Pin GPIO_PIN_15
+#define ST7735_BL_GPIO_Port GPIOA
+#define ST7735_DC_Pin GPIO_PIN_6
+#define ST7735_DC_GPIO_Port GPIOB
+#define ST7735_CS_Pin GPIO_PIN_7
+#define ST7735_CS_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

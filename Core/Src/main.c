@@ -20,13 +20,14 @@
 #include "main.h"
 #include "dma.h"
 #include "iwdg.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "st7735.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,8 +100,10 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM4_Init();
   MX_IWDG_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   User_Init();
+  ST7735_Init();
   HAL_UART_Receive_DMA(&huart1, Rarr, 5);
   /* USER CODE END 2 */
 
@@ -109,9 +112,19 @@ int main(void)
   while (1)
   {
 	  Task_20ms_DIV();
-	  printf("ÄãºÃ\r\n");
 	  //Serial_SendArray(Tarr, sizeof(Tarr)/sizeof(Tarr[0]));
-	  HAL_Delay(1000);
+	  //HAL_Delay(1000);
+
+//	  ST7735_FillScreen(ST7735_RED);
+//	  HAL_Delay(500);
+//	  ST7735_FillScreen(ST7735_GREEN);
+//	  HAL_Delay(500);
+//	  ST7735_FillScreen(ST7735_BLUE);
+//	  HAL_Delay(500);
+
+	  ST7735_DrawString(0, 0, "CSDN666", ST7735_BLUE, ST7735_BLACK, &Font_11x18);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
