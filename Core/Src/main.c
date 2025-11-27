@@ -109,8 +109,9 @@ int main(void)
   while (1)
   {
 	  Task_20ms_DIV();
+	  printf("ÄãºÃ\r\n");
 	  //Serial_SendArray(Tarr, sizeof(Tarr)/sizeof(Tarr[0]));
-	  //HAL_Delay(1000);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
