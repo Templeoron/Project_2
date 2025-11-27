@@ -90,6 +90,8 @@ void Timer_Program(void);
 void TM1638_DisPlayDriver(void);
 uint8_t TM1638_ReadKey(void);
 
+float Get_Temprate(void);
+
 #endif
 
 

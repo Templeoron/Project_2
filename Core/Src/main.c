@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "iwdg.h"
 #include "spi.h"
@@ -73,8 +74,6 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	const char str[] = "hello!";
-	const uint8_t Tarr[7] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07};
 
   /* USER CODE END 1 */
 
@@ -101,6 +100,7 @@ int main(void)
   MX_TIM4_Init();
   MX_IWDG_Init();
   MX_SPI1_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   User_Init();
   ST7735_Init();
@@ -121,9 +121,14 @@ int main(void)
 //	  HAL_Delay(500);
 //	  ST7735_FillScreen(ST7735_BLUE);
 //	  HAL_Delay(500);
+	  float temp;
+	  temp = Get_Temprate();
 
-	  ST7735_DrawString(0, 0, "CSDN666", ST7735_BLUE, ST7735_BLACK, &Font_11x18);
+//	  ST7735_DrawString(0, 0, "CSDN666", ST7735_BLUE, ST7735_BLACK, &Font_11x18);
 
+	  //Serial_SendString(temp);
+	  printf("temp: %.2f\n", temp);
+	  HAL_Delay(500);
 
     /* USER CODE END WHILE */
 
@@ -140,6 +145,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -167,6 +173,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }

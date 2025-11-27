@@ -196,8 +196,10 @@ static const uint32_t Font11x18 [] = {
   0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x3880, 0x7F80, 0x4700, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,   // ~
 };
 
+
 static const uint32_t Font_custom [] = {0x00000000};
 
 const FontDef Font_7x10 = {7, 10, Font7x10};
 const FontDef Font_11x18 = {11, 18, Font11x18};
 const FontDef Font_Custom = {0, 0, Font_custom};
+
