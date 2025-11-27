@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
@@ -25,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "string.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,6 +50,8 @@ hc_sr04 HC_SR04;
 /* USER CODE BEGIN PV */
 volatile bits	StateF;
 volatile bits	OtherF;
+
+uint8_t Rarr[5] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,6 +72,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	const char str[] = "hello!";
+	const uint8_t Tarr[7] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07};
 
   /* USER CODE END 1 */
 
@@ -90,11 +95,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_TIM4_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
   User_Init();
+  HAL_UART_Receive_DMA(&huart1, Rarr, 5);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,14 +109,8 @@ int main(void)
   while (1)
   {
 	  Task_20ms_DIV();
-	  uint8_t dataRcvd;
-	  HAL_UART_Receive(&huart1, &dataRcvd, 1, HAL_MAX_DELAY);
-	  if(dataRcvd == '0'){
-		  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-	  }
-	  else if (dataRcvd == '1') {
-		  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-	  }
+	  //Serial_SendArray(Tarr, sizeof(Tarr)/sizeof(Tarr[0]));
+	  //HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

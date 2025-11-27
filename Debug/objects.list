@@ -1,5 +1,6 @@
 "./Core/Src/Subfunction.o"
 "./Core/Src/Timer_Program.o"
+"./Core/Src/dma.o"
 "./Core/Src/gpio.o"
 "./Core/Src/iwdg.o"
 "./Core/Src/main.o"
