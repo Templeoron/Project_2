@@ -1,5 +1,4 @@
-Core/Src/Timer_Program.o: ../Core/Src/Timer_Program.c \
- ../Core/Inc/Define_Global.h ../Core/Inc/main.h \
+Core/Src/dti11.o: ../Core/Src/dti11.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -29,9 +28,7 @@ Core/Src/Timer_Program.o: ../Core/Src/Timer_Program.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/Define_Global.h ../Core/Inc/Define_Type.h \
- ../Core/Inc/usart.h
-../Core/Inc/Define_Global.h:
+ ../Core/Inc/Define_Global.h ../Core/Inc/main.h ../Core/Inc/Define_Type.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -63,5 +60,5 @@ Core/Src/Timer_Program.o: ../Core/Src/Timer_Program.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/Define_Global.h:
+../Core/Inc/main.h:
 ../Core/Inc/Define_Type.h:
-../Core/Inc/usart.h:

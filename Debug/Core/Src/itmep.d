@@ -28,7 +28,7 @@ Core/Src/itmep.o: ../Core/Src/itmep.c ../Core/Inc/Define_Global.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/Define_Global.h ../Core/Inc/Define_Type.h
+ ../Core/Inc/Define_Global.h ../Core/Inc/Define_Type.h ../Core/Inc/adc.h
 ../Core/Inc/Define_Global.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -62,3 +62,4 @@ Core/Src/itmep.o: ../Core/Src/itmep.c ../Core/Inc/Define_Global.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/Define_Global.h:
 ../Core/Inc/Define_Type.h:
+../Core/Inc/adc.h:

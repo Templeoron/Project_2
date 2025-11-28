@@ -41,6 +41,11 @@
 	
 #define 	KEY0_PRES			1
 #define 	KEY1_PRES			2
+
+#define 	DHT11_HIGH     		HAL_GPIO_WritePin(DTI11_GPIO_Port, DTI11_Pin,	GPIO_PIN_SET) //输出高电平
+#define 	DHT11_LOW     		HAL_GPIO_WritePin(DTI11_GPIO_Port, DTI11_Pin, GPIO_PIN_RESET)//输出低电平
+
+#define 	DHT11_IO_IN      	HAL_GPIO_ReadPin(DTI11_GPIO_Port, DTI11_Pin)//读取IO口电平
 /*********************************************************************************************************
 *                                              全局变量
 *********************************************************************************************************/

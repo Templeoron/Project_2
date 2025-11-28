@@ -65,6 +65,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+
 /* USER CODE END 0 */
 
 /**
@@ -121,14 +122,15 @@ int main(void)
 //	  HAL_Delay(500);
 //	  ST7735_FillScreen(ST7735_BLUE);
 //	  HAL_Delay(500);
-	  float temp;
-	  temp = Get_Temprate();
+
+//	  float temp;
+//	  temp = Get_Temprate();
 
 //	  ST7735_DrawString(0, 0, "CSDN666", ST7735_BLUE, ST7735_BLACK, &Font_11x18);
 
 	  //Serial_SendString(temp);
-	  printf("temp: %.2f\n", temp);
-	  HAL_Delay(500);
+//	  printf("temp: %.2f\n", temp);
+//	  HAL_Delay(500);
 
     /* USER CODE END WHILE */
 

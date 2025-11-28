@@ -2,6 +2,7 @@
 "./Core/Src/Timer_Program.o"
 "./Core/Src/adc.o"
 "./Core/Src/dma.o"
+"./Core/Src/dti11.o"
 "./Core/Src/fonts.o"
 "./Core/Src/gpio.o"
 "./Core/Src/itmep.o"
